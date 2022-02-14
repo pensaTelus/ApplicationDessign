@@ -48,12 +48,7 @@ public class Animal implements Comparable {
 
     @Override
     public int compareTo(Object o) {
-        // TODO Auto-generated method stub
         int compareage = ((Animal) o).getId();
-        /* For Ascending order */
         return this.id - compareage;
-
-        /* For Descending order do like this */
-        // return compareage-this.studentage; }
     }
 }

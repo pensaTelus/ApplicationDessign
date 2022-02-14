@@ -26,57 +26,72 @@ public class App {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		try {
+			boolean parar = false;
+			while (!parar) {
+				print("Choose a class of the collection interface.");
+				print("1 array List Example");
+				print("2 linked List Example");
+				print("3 hash Set Example");
+				print("4 tree Set Example");
+				print("5 hash Map Example");
+				print("6 tree Map Example");
+				print("7 vector Example");
+				print("8 hash Table Example");
+				print("9 priority Queue Example");
+				print("10 linked Hash Set Example");
+				print("11 linked Hash map Example");
+				print("Other = exit");
 
-			print("Choose an class of the collection interface.");
-			print("1 array List Example");
-			print("2 linked List Example");
-			print("3 hash Set Example");
-			print("4 tree Set Example");
-			print("5 hash Map Example");
-			print("6 tree Map Example");
-			print("7 vector Example");
-			print("8 hash Table Example");
-			print("9 priority Queue Example");
-			print("10 linked Hash Set Example");
-			print("Other = exit");
+				String option = br.readLine();
 
-			String option = br.readLine();
+				switch (option) {
+					case "1":
+						arrayListExample();
+						break;
+					case "2":
+						linkedListExample();
+						break;
+					case "3":
+						hashSetExample();
+						break;
+					case "4":
+						treeSetExample();
+						break;
+					case "5":
+						hashMapExample();
+						break;
+					case "6":
+						treeMapExample();
+						break;
+					case "7":
+						vectorExample();
+						break;
+					case "8":
+						hashTableExample();
+						break;
+					case "9":
+						priorityQueueExample();
+						break;
+					case "10":
+						linkedHashSetExample();
+						break;
+					case "11":
+						linkedHashMapExample();
+						break;
+					default:
+						parar = true;
+						break;
+				}
 
-			switch (option) {
-				case "1":
-					arrayListExample();
-					break;
-				case "2":
-					linkedListExample();
-					break;
-				case "3":
-					hashSetExample();
-					break;
-				case "4":
-					treeSetExample();
-					break;
-				case "5":
-					hashMapExample();
-					break;
-				case "6":
-					treeMapExample();
-					break;
-				case "7":
-					vectorExample();
-					break;
-				case "8":
-					hashTableExample();
-					break;
-				case "9":
-					priorityQueueExample();
-					break;
-				case "10":
-					linkedHashSetExample();
-					break;
+				if (!parar) {
+					System.out.println("Press Enter key to continue...");
+					br.readLine();
+
+				}
 			}
-
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println("da error");
 		}
 
 	}
@@ -143,9 +158,9 @@ public class App {
 		print("you can add elements in two ways");
 
 		print("pq.add(new Animal(1, \"Cat\")");
+		pq.add(new Animal(3, "Duck"));
 		pq.add(new Animal(1, "Cat"));
 		pq.add(new Animal(2, "Dog"));
-		pq.add(new Animal(3, "Duck"));
 		print("pq.addAll(Arrays.asList(new Animal[] { new Animal(5, \"Turtle\"), new Animal(6, \"Tiger\") }));");
 		pq.addAll(Arrays.asList(new Animal[] { new Animal(5, "Turtle"), new Animal(6, "Tiger") }));
 
@@ -355,6 +370,51 @@ public class App {
 
 	}
 
+	public static void linkedHashMapExample() {
+		print("-------------------------------------------");
+		print("--------linked Hash map example------------");
+		print("-------------------------------------------");
+
+		print("First you have to declare the map");
+		print("LinkedHashMap<Integer, Animal> lhm = new LinkedHashMap<>();");
+
+		LinkedHashMap<Integer, Animal> lhm = new LinkedHashMap<>();
+
+		print("To insert use the put method, you have a key and the object");
+
+		lhm.put(1, new Animal(1, "Cat"));
+		lhm.put(2, new Animal(2, "Duck"));
+
+		print(lhm);
+
+		print("To update you have to use get and then change it, with get you use find by the key");
+		print("Animal duck = lhm.get(2); // get the duck");
+		Animal duck = lhm.get(2); // get a duck
+
+		print("duck.setName(\"dragon\");");
+		duck.setName("dragon");
+		print("hash map after update" + lhm);
+		print("To remove use the key as well");
+		lhm.remove(2); // remove the duck;
+
+		print("after removing " + lhm);
+
+		lhm.put(3, new Animal(3, "Dog"));
+
+		lhm.put(4, new Animal(4, "Duck"));
+
+		// Iterator
+		print("To iterate you should iterate by the key value and use that to get the value of the objects storage in the hash map");
+
+		for (int i : lhm.keySet()) {
+			System.out.println("key: " + i + " value: " + lhm.get(i));
+		}
+
+		lhm.clear();
+		print(lhm.isEmpty());
+
+	}
+
 	public static void treeSetExample() {
 		print("-------------------------------------------");
 		print("-----------Tree set example--------------");
@@ -460,31 +520,47 @@ public class App {
 		print("-----------Array list example--------------");
 		print("-------------------------------------------");
 
+		print("First you have to declare a variable");
+		print("ArrayList<Animal> arr = new ArrayList<>();");
 		ArrayList<Animal> arr = new ArrayList<>();
 
+		print("You can add elements with add or addall");
+		print("arr.add(new Animal(1, \"Cat\")); ");
 		arr.add(new Animal(1, "Cat"));
 		arr.add(new Animal(2, "Dog"));
-		System.out.println(arr.size());
 		arr.add(new Animal(2, "Dog"));
-		System.out.println(arr.size()); // ArrayList doesn't matter if you insert twice the same object.
+		System.out.println("You can use arr.size to get the size value " + arr.size()); // ArrayList doesn't matter if
+																						// you insert twice the same
+																						// object.
 
-		print(arr);
+		print("The array looks like: " + arr);
+		print("You can also add an element in a specific position ");
+		print("arr.add(2, new Animal(3, \"pig\")); // It is going to be inserted between the Dogs");
 		arr.add(2, new Animal(3, "pig")); // It is going to be inserted between the Dogs
 		print(arr);
 		Iterator<Animal> iterator = arr.iterator();
 		int i = 0;
+		print("You can use an iterator to get all the elements one by one");
 		while (iterator.hasNext()) {
 			Animal an = iterator.next();
 			System.out.println("Animal " + (++i) + " " + an.toString() + " hascode: " + an.hashCode());
 		}
 
+		print("you can remove an element by the position or sending the object");
+		print("arr.remove(3); // It's going to remove the second Dog");
 		arr.remove(3); // It's going to remove the second Dog
 		print(arr);
 		arr.remove(new Animal(1, "Cat")); // Search the object (this works because we change the hashCode and the equals
 											// methods) in other way we can iterate the array and search one by one
 		Animal myPig = new Animal(3, "pig");
+
 		if (arr.contains(myPig)) {
+			print("to update an object you can use contains first to ensure the array contains the elment");
+			print("then you can use indexof to get the postion and get to obtain the element. ");
+
+			print("Animal getPig = arr.get(arr.indexOf(new Animal(3, \"pit\")));");
 			Animal getPig = arr.get(arr.indexOf(myPig));
+			print("now you can update the animal with: getPig.setName(\"The pig\");");
 			getPig.setName("The pig");
 			myPig.setName("new pig"); // the object in the array is going to take the value of The pig.
 		}
@@ -503,17 +579,21 @@ public class App {
 		print("-----------Hash Set example----------------");
 		print("-------------------------------------------");
 
-		Set<Animal> animalsSet = new HashSet<>();
+		print("First you have to declare a hash set");
+
+		print("Set<Animal> animalsSet = new HashSet<>();");
+		HashSet<Animal> animalsSet = new HashSet<>();
 		// add example
+		print("you can insert elements with the add and addAll methods");
+		print("animalsSet.add(new Animal(1, \"Cat\"));");
 		animalsSet.add(new Animal(1, "Cat"));
 		animalsSet.add(new Animal(2, "Dog"));
 		System.out.println(animalsSet.size());
 		animalsSet.add(new Animal(2, "Dog")); // We cant insert twice the same object (thats because we change the
 												// hashCode() method in the class Animal both object have the same hash
 												// code so they can't insert the second one)
-		System.out.println(animalsSet.size());
+		print("because is a hash you can't insert the same object twice.");
 		Animal myCat = new Animal(1, "Cat");
-		System.out.println(myCat.hashCode());
 		// Iterator example
 		Iterator<Animal> iterator = animalsSet.iterator();
 		int i = 0;
@@ -526,7 +606,6 @@ public class App {
 		System.out.println("animalsSet contains Cat = " + animalsSet.contains(myCat));
 		// remove example
 		System.out.println("Cat  removed from animalsSet set = " + animalsSet.remove(myCat));
-
 		// Update example
 		Animal myDog = new Animal(2, "Dog");
 		if (animalsSet.contains(myDog)) {
