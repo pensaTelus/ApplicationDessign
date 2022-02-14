@@ -40,7 +40,7 @@ We use a java class as auxiliary  name Animal, this class implement Comparable i
 
 ### Elmenents and constructor 
 
-```java
+```r
     public int id;
     public String name;
 
@@ -71,7 +71,7 @@ To use some methods like indexOf you have to use the same object you insert or y
 toString method help us to print in an easier way the collection. 
 and compareTo helps to sort the objects. 
 
-```java
+```r
    @Override
     public int hashCode() {
         return this.id;
@@ -111,7 +111,7 @@ I mention this because i use print a lot
 #### HashSet
 HashSet is commonly used if you want to access elements randomly or store a list of items which cannot contain duplicate values.
 
-```java
+```r
 print("-------------------------------------------");
 print("-----------Hash Set example----------------");
 print("-------------------------------------------");
@@ -166,7 +166,7 @@ output of the console:
 #### LinkedHashSet
 The LinkedHashSet is an ordered version of HashSet that maintains a doubly-linked List across all elements. When the iteration order is needed to be maintained this class is used.
 
-```java
+```r
 print("-------------------------------------------");
 print("----------linked hash set example----------");
 print("-------------------------------------------");
@@ -224,7 +224,7 @@ ArrayList in Java is used to store dynamically sized collection of elements. Con
 
 With arraylist you can have more than one time the same element
 
-```java 
+```r 
 print("-------------------------------------------");
 print("-----------Array list example--------------");
 print("-------------------------------------------");
@@ -293,7 +293,7 @@ The Vector class implements a growable array of objects. Vectors fall in legacy 
 ![image](https://user-images.githubusercontent.com/98837103/153920644-3861330f-23a5-40f2-ad5b-bd207d04447e.png)
 
 
-```java 
+```r 
 print("-------------------------------------------");
 print("--------------Vector example---------------");
 print("-------------------------------------------");
@@ -347,7 +347,7 @@ Linked List is a part of the Collection framework present in java.util package. 
 
 
 
-```java  
+```r  
 print("-------------------------------------------");
 print("-----------linked list example--------------");
 print("-------------------------------------------");
@@ -397,7 +397,7 @@ Console output:
 #### PriorityQueue 
 A PriorityQueue is used when the objects are supposed to be processed based on the priority. It is known that a Queue follows the First-In-First-Out algorithm, but sometimes the elements of the queue are needed to be processed according to the priority, that’s when the PriorityQueue comes into play.
 
-```java  
+```r  
 print("-------------------------------------------");
 print("-----------priority queve example----------");
 print("-------------------------------------------");
@@ -464,7 +464,7 @@ Console output:
 #### HashTable 	  
 The Hashtable class implements a hash table, which maps keys to values. Any non-null object can be used as a key or as a value. To successfully store and retrieve objects from a hashtable, the objects used as keys must implement the hashCode method and the equals method.  
 
-```java 
+```r 
 print("-------------------------------------------");
 print("--------------Hash table example---------------");
 print("-------------------------------------------");
@@ -520,7 +520,7 @@ Console output:
 
 HashMap is similar to HashTable, but it is unsynchronized. It allows to store the null keys as well, but there should be only one null key object and there can be any number of null values.  This class makes no guarantees as to the order of the map. To use this class and its methods, you need to import java.util.HashMap package or its superclass.
 
-```java 
+```r 
 print("-------------------------------------------");
 print("------------Hash map example---------------");
 print("-------------------------------------------");
@@ -569,7 +569,7 @@ Console output:
 ![image](https://user-images.githubusercontent.com/98837103/153924697-677aa947-5b7e-46a1-a7a6-7e200e2846be.png)
 
 #### LinkedHashMap 	 
-```java 
+```r 
 print("-------------------------------------------");
 print("--------linked Hash map example------------");
 print("-------------------------------------------");
@@ -620,7 +620,7 @@ Console output:
 
 #### TreeMap  	 
 
-```java 
+```r 
 print("-------------------------------------------");
 print("------------Tree map example---------------");
 print("-------------------------------------------");
